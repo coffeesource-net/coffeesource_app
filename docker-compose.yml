@@ -1,0 +1,11 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: coffeesource
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "3000:3000"
+      - "8000:8000"
+    volumes:
+      - .:/code
