@@ -1,7 +1,6 @@
 import json
 from steem import Steem
 from dateutil import parser
-from datetime import datetime
 
 from django.http import Http404
 from django.shortcuts import redirect
@@ -22,10 +21,6 @@ class AccountDetailView(TemplateView):
             username = username[1:]
 
         account_info = s.get_account(username)
-
-        location = None
-        website = None
-        about = None
         profile_image = None
         name = None
         cover_image = None
@@ -35,9 +30,6 @@ class AccountDetailView(TemplateView):
             if metadata:
                 metadata = json.loads(metadata)
                 profile = metadata.get('profile')
-                location = profile.get('location')
-                website = profile.get('website')
-                about = profile.get('about')
                 profile_image = profile.get('profile_image')
                 name = profile.get('name')
                 cover_image = profile.get('cover_image')
@@ -45,9 +37,6 @@ class AccountDetailView(TemplateView):
             account_dict = {
                 'id': account_info.get('id'),
                 'username': account_info.get('name'),
-                'location': location,
-                'website': website,
-                'about': about,
                 'profile_image': profile_image,
                 'name': name,
                 'cover_image': cover_image,
@@ -85,16 +74,6 @@ class AccountDetailView(TemplateView):
             author = comment.get('author')
             category = comment.get('category')
 
-            now = datetime.now()
-
-            last_payout = parser.parse(comment.get('last_payout'))
-            cashout_time = parser.parse(comment.get('cashout_time'))
-
-            if cashout_time > now:
-                last_payout = None
-            else:
-                cashout_time = None
-
             entry_dict = {
                 'id': comment.get('id'),
                 'title': comment.get('title'),
@@ -105,19 +84,8 @@ class AccountDetailView(TemplateView):
                 ),
                 'author': author,
                 'category': category,
-                'created': comment.get('created'),
-                'active': comment.get('active'),
-                'last_update': comment.get('last_update'),
-                'net_votes': comment.get('net_votes'),
-                'total_payout_value': comment.get('total_payout_value'),
-                'curator_payout_value': comment.get('curator_payout_value'),
-                'author_rewards': comment.get('author_rewards'),
-                'last_payout': last_payout,
-                'cashout_time': cashout_time,
                 'tags': metadata.get('tags'),
                 'images': metadata.get('image'),
-                'links': metadata.get('links'),
-                'app': metadata.get('app'),
             }
 
             if username == author:
