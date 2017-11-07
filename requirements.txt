@@ -1,0 +1,8 @@
+Django==1.11.7
+
+# Libs
+steem==0.18.103
+
+# Apps
+django-extensions==1.7.4
+django-widget-tweaks==1.4.1

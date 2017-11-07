@@ -1,0 +1,42 @@
+.CSHeaderAt {
+    color: white;
+    font-size: 30px;
+}
+
+.CSEntriesList {
+    list-style: none;
+}
+.CSEntryListItem {
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.CSEntryListItem p {
+    margin-bottom: 1px;
+}
+
+.CSEntryListItemMain {
+    margin-bottom: 10px;
+}
+
+.CSProfileImage {
+    max-width: 130px;
+    max-height: auto;
+    display: block;
+    margin: auto;
+}
+
+.CSAccountDetail p {
+    margin-bottom: 1px;
+}
+
+.CSHomeContainer {
+    height: 470px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+
+  display: flex;
+  align-items: center;
+}

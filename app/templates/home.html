@@ -1,0 +1,30 @@
+{% extends "layout/index.html" %}
+{% load widget_tweaks %}
+
+{% block title %}Steem query{% endblock title %}
+
+{% block content %}
+<div class="jumbotron vertical-center">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4 offset-md-4">
+                <h1>Coffee Source</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+  <div class="container CSHomeContainer">
+        <div class="row text-center">
+          <div class="col-md-4 offset-md-4">
+            <form action="{% url 'accounts:username_search_form' %}" method="post" class="form-inline my-2 my-lg-0">
+              {% csrf_token %}
+              <span class="">@</span><input class="form-control" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+              <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+  </div>
+</div>
+{% endblock content %}
