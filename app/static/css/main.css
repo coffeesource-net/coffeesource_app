@@ -29,3 +29,14 @@
 .CSAccountDetail p {
     margin-bottom: 1px;
 }
+
+.CSHomeContainer {
+    height: 470px;
+}
+
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+
+  display: flex;
+  align-items: center;
+}

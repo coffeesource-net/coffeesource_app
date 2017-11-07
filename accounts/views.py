@@ -100,6 +100,5 @@ class AccountDetailView(TemplateView):
 class UsernameSearchFormView(View):
     def post(self, request, **kwargs):
         username = request.POST.get('cs_username_search')
-        print(username)
 
         return redirect('account_detail', username)

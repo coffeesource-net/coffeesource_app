@@ -12,3 +12,7 @@ class HomeView(TemplateView):
         s = Steem()
         context['account_counter'] = s.get_account_count()
         return context
+
+
+class NotFoundView(TemplateView):
+    template_name = '404.html'
