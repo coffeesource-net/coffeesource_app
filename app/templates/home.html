@@ -1,4 +1,25 @@
 {% extends "layout/index.html" %}
 {% load widget_tweaks %}
 
-{% block title %}Steem query{% endblock %}
+{% block title %}Steem query{% endblock title %}
+
+{% block content %}
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3">Steem Queries</h1>
+    </div>
+
+</div>
+
+<div class="CSHome container">
+    <p>{{ account_counter }} Registered accounts</p>
+
+    <form action="{% url 'accounts:username_search_form' %}" method="post" class="form-inline my-2 my-lg-0">
+      {% csrf_token %}
+
+      <span class="">@</spa><input class="form-control" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+
+      <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+    </form>
+</div>
+{% endblock content %}

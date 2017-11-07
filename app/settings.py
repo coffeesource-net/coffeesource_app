@@ -9,6 +9,7 @@ ALLOWED_HOSTS = []
 
 PROJECT_APPS = (
     'app',
+    'accounts',
 )
 
 INSTALLED_APPS = PROJECT_APPS + (

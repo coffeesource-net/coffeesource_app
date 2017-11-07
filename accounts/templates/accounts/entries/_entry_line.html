@@ -1,0 +1,19 @@
+<li class="CSEntryListItem border border-secondary rounded">
+    <div class="row CSEntryListItemMain">
+        <div class="col-md-9 col-sm-6 col-xs-12">
+            <h4>{{ blog_entry.title }}</h4>
+            
+            <a href="{{ blog_entry.url }}" target="_blank">{{ blog_entry.url }}</a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <ul class="list-inline">
+            {% for tag in blog_entry.tags %}
+                <li class="list-inline-item">
+                    <span class="badge badge-dark">{{ tag }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</li>
