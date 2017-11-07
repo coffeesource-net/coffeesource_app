@@ -2,13 +2,24 @@ import json
 from steem import Steem
 from dateutil import parser
 
+from django.http import JsonResponse
 from django.http import Http404
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from django.views.generic import View
+from django.template.loader import render_to_string
+
+from .utils import get_user_posts
 
 
 s = Steem()
+
+
+class UsernameSearchFormView(View):
+    def post(self, request, **kwargs):
+        username = request.POST.get('cs_username_search')
+
+        return redirect('account_detail', username)
 
 
 class AccountDetailView(TemplateView):
@@ -56,40 +67,10 @@ class AccountDetailView(TemplateView):
         account_dict = self.get_object()
 
         username = account_dict['username']
-
-        blog_entries = s.get_blog(
-            account=account_dict['username'],
-            entry_id=0,
-            limit=20,
+        entries_list = get_user_posts(
+            username=username,
+            from_id=0,
         )
-
-        entries_list = []
-
-        for entry in blog_entries:
-            comment = entry['comment']
-            metadata = json.loads(comment.get('json_metadata'))
-
-            # Could be util to load posts on utopian directly.
-            # parent_permlink = comment.get('permlink')
-            author = comment.get('author')
-            category = comment.get('category')
-
-            entry_dict = {
-                'id': comment.get('id'),
-                'title': comment.get('title'),
-                'url': 'https://steemit.com/{0}/@{1}/{2}'.format(
-                    category,
-                    author,
-                    comment.get('permlink'),
-                ),
-                'author': author,
-                'category': category,
-                'tags': metadata.get('tags'),
-                'images': metadata.get('image'),
-            }
-
-            if username == author:
-                entries_list.append(entry_dict)
 
         context['account_dict'] = account_dict
         context['entries_list'] = entries_list
@@ -97,8 +78,29 @@ class AccountDetailView(TemplateView):
         return context
 
 
-class UsernameSearchFormView(View):
-    def post(self, request, **kwargs):
-        username = request.POST.get('cs_username_search')
+class AjaxLoadAccountPostsView(View):
+    def get(self, request, *args, **kwargs):
+        username = request.GET.get('username')
+        last_entry_id = request.GET.get('last_entry_id')
+        next_entry_id = int(last_entry_id) - 1
 
-        return redirect('account_detail', username)
+        if next_entry_id < 0:
+            return JsonResponse({'action': 'pause'})
+
+        entries_list = get_user_posts(
+            username=username,
+            from_id=next_entry_id,
+        )
+
+        return JsonResponse(
+            {
+                'action': 'load',
+                'content': render_to_string(
+                    'accounts/entries/_entry_list.html',
+                    context={
+                        'entries_list': entries_list,
+                    },
+                    request=self.request,
+                )
+            }
+        )
