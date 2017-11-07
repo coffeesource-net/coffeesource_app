@@ -9,7 +9,7 @@ def get_user_posts(username, from_id):
     blog_entries = s.get_blog(
         account=username,
         entry_id=from_id,
-        limit=30,
+        limit=20,
     )
 
     entries_list = []
