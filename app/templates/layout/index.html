@@ -1,5 +1,5 @@
 <!doctype html>
-{% load static %}
+{% load static general_tags %}
 
 <html lang="en">
   <head>
@@ -17,26 +17,26 @@
     {% block css %}{% endblock %}
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <a class="navbar-brand" href="/">Coffee Source</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    {% get_last_ecoinstant_entry as last_ecoinstant_entry %}
+    <nav class="navbar-dark fixed-top bg-dark"">
+      <div class="row">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <a class="navbar-brand" href="/">Coffee Source</a>
+        </div>
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav mr-auto">
-          <!-- Space to add main menu using next format -->
-          <!-- <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li> -->
-        </ul>
-        <form action="{% url 'accounts:username_search_form' %}" method="post" class="form-inline my-2 my-lg-0">
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <a href="{{ last_ecoinstant_entry.url }}" target="_blank">{{ last_ecoinstant_entry.title }}</a>
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+        <form action="{% url 'accounts:username_search_form' %}" method="post" class=" form-inline my-2 my-lg-0">
           {% csrf_token %}
 
           <span class="CSHeaderAt">@</spa><input class="form-control mr-sm-2" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
 
           <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
         </form>
+        </div>
       </div>
     </nav>
 
