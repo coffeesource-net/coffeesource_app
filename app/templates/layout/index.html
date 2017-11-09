@@ -12,8 +12,8 @@
     <title>{% block title %}{% endblock title %} | Coffee Source</title>
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
-    <link href="{% static 'bootstrap/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet" type='text/css'>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet" type='text/css'>
     {% block css %}{% endblock %}
   </head>
   <body>
@@ -50,7 +50,7 @@
 
     <script src="{% static 'js/libs/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'js/libs/popper.min.js' %}"></script>
-    <script src="{% static 'bootstrap/bootstrap.js' %}"></script>
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
     {% block js %}{% endblock %}
   </body>
 </html>
