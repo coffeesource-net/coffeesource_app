@@ -62,9 +62,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-# Add your own local_settings.py file at
-# coffesource_app/app/ or remove next code for run locally.
-settings_file = __import__('app.local_settings').local_settings
-for setting_value in dir(settings_file):
-    locals()[setting_value] = getattr(settings_file, setting_value)
