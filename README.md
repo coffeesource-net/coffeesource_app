@@ -12,7 +12,7 @@ For run the project in a local enviroment, follow next steps:
 
 1. **Install Docker**.
 
-Download Docker from his [offical web site](https://docs.docker.com/engine/installation/) and install it.
+Download Docker from his [offical website](https://docs.docker.com/engine/installation/) and install it.
 
 2. **Clone the project**.
 
