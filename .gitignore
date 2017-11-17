@@ -17,3 +17,4 @@ Thumbs.db
 
 # Configuration files
 /app/local_settings.py
+/static
