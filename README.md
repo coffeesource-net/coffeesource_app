@@ -1,18 +1,18 @@
 # Coffeesource.net
 
-[Coffeesource.net](Coffeesource.net) is an open source project built using Python for develop tools using the Steem blockchain.
+[Coffeesource.net](Coffeesource.net) is an open source project built using Python to develop tools using the Steem blockchain.
 
 ## Architecture
 
-The application has been developed using [Django](https://www.djangoproject.com/) and [steem-python](https://github.com/steemit/steem-python) for access to the Steem blockchain. For run the application locally, a [Docker](https://www.docker.com/) image has been configured on the project.
+The application has been developed using [Django](https://www.djangoproject.com/) and [steem-python](https://github.com/steemit/steem-python) for access to the Steem blockchain. To run the application locally, a [Docker](https://www.docker.com/) image has been configured on the project.
 
 ## Run the project
 
-For run the project in a local enviroment, follow next steps:
+To run the project in a local enviroment, follow next steps:
 
 1. **Install Docker**.
 
-Download Docker from his [offical website](https://docs.docker.com/engine/installation/) and install it.
+Download Docker from the [offical website](https://docs.docker.com/engine/installation/) and install it.
 
 2. **Clone the project**.
 
@@ -28,7 +28,7 @@ Make sure that Docker is running. Move to the root project folder and run the fo
 
 4. **Run the project**
 
-Run the following command for run the project:
+Run the following command to run the project:
 
     docker-compose up
 
