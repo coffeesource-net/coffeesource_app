@@ -9,6 +9,8 @@ from django.views.generic import TemplateView
 from django.views.generic import View
 from django.template.loader import render_to_string
 
+from .data import SELFIE_CONTEST_PLAYERS
+from .data import PAPAPEPPER_CONTEST_ENTRIES
 from .utils import get_user_posts
 
 
@@ -74,6 +76,7 @@ class AccountDetailView(TemplateView):
 
         context['account_dict'] = account_dict
         context['entries_list'] = entries_list
+        context['easy_backlink'] = True
 
         return context
 
@@ -103,4 +106,66 @@ class AjaxLoadAccountPostsView(View):
                     request=self.request,
                 )
             }
+        )
+
+
+class PepperView(TemplateView):
+    template_name = 'accounts/pepper_selfie_contest.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['selfie_contest'] = True
+
+        return context
+
+    def post(self, request, *args, **kwargs):
+        username = request.POST.get('cs_username_search')
+
+        if username[0] == '@':
+            username = username[1:]
+
+        selfies_list = []
+        registered = False
+
+        if username in SELFIE_CONTEST_PLAYERS:
+            registered = True
+
+            s = Steem()
+
+            for entry_dict in PAPAPEPPER_CONTEST_ENTRIES:
+                selfie_dict = {
+                    'title': entry_dict['title'],
+                    'permlink': entry_dict['permlink'],
+                    'challenge': entry_dict['challenge'],
+                    'description': entry_dict['description'],
+                    'prize_pool': entry_dict['prize_pool'],
+                    'image': None,
+                }
+
+                entry_comments = s.get_content_replies(
+                    author='papa-pepper',
+                    permlink=entry_dict['permlink'],
+                )
+
+                for comment in entry_comments:
+                    author = comment['author']
+
+                    if author == username:
+                        json_metadata = json.loads(comment['json_metadata'])
+                        image_list = json_metadata.get('image')
+
+                        if image_list:
+                            image = image_list[0]
+                            selfie_dict['image'] = image
+
+                            break
+
+                selfies_list.append(selfie_dict)
+
+        return self.render_to_response(
+            self.get_context_data(
+                username=username,
+                registered=registered,
+                selfies_list=selfies_list,
+            )
         )

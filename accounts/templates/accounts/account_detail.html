@@ -3,40 +3,40 @@
 
 {% block title %}@{{ account_dict.username }}{% endblock title %}
 
-{% block content %}
-<div class="jumbotron">
-    <div class="container CSAccountDetail">
-        <div class="row">
-            <div class="col-md-3 col-sm-12 col-xs-12">
-                {% if account_dict.profile_image %}
-                <img class="CSProfileImage rounded-circle" src="{{ account_dict.profile_image }}">
-                {% else %}
-                <i class="CSProfileImage fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
-                {% endif %}
-            </div>
+{% block jumbotron %}
+<div class="CSAccountDetail">
+    <div class="row">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            {% if account_dict.profile_image %}
+            <img class="CSProfileImage rounded-circle" src="{{ account_dict.profile_image }}">
+            {% else %}
+            <i class="CSProfileImage fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+            {% endif %}
+        </div>
 
-            <div class="col-md-6 col-sm-12 col-xs-12 text-center">
-                <h1 class="display-4">@{{ account_dict.username }}</h1>
-                {% if account_dict.name %}
-                <p>{{ account_dict.name }}</p>
-                {% endif %}
+        <div class="col-md-6 col-sm-12 col-xs-12 text-center">
+            <h1 class="display-4">@{{ account_dict.username }}</h1>
+            {% if account_dict.name %}
+            <p>{{ account_dict.name }}</p>
+            {% endif %}
 
-                <p>Joined at {{ account_dict.created }}</p>
-            </div>
+            <p>Joined at {{ account_dict.created }}</p>
+        </div>
 
 
-            <div class="col-md-3 col-sm-12 col-xs-12 text-center">
-                <p><strong>Total posts:</strong> {{ account_dict.post_count }}</p>
-                <p><strong>Voting power:</strong> {{ account_dict.voting_power }}</p>
-                <p><strong>Curation rewards:</strong> {{ account_dict.curation_rewards }}</p>
-                <p><strong>Posting rewards:</strong> {{ account_dict.posting_rewards }}</p>
-                <p><strong>Reputation:</strong> {{ account_dict.reputation }}</p>
-            </div>
+        <div class="col-md-3 col-sm-12 col-xs-12 text-center">
+            <p><strong>Total posts:</strong> {{ account_dict.post_count }}</p>
+            <p><strong>Voting power:</strong> {{ account_dict.voting_power }}</p>
+            <p><strong>Curation rewards:</strong> {{ account_dict.curation_rewards }}</p>
+            <p><strong>Posting rewards:</strong> {{ account_dict.posting_rewards }}</p>
+            <p><strong>Reputation:</strong> {{ account_dict.reputation }}</p>
         </div>
     </div>
 </div>
+{% endblock %}
 
-<div class="CSAccountDetailEntries container">
+{% block content %}
+<div class="CSAccountDetailEntries">
     <ul class="CSEntriesList" data-ax-load-account-posts-url="{% url 'accounts:ax_load_account_posts' %}?username={{ account_dict.username }}">
 
     {% include 'accounts/entries/_entry_list.html' %}

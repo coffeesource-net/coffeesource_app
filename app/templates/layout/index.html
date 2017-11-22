@@ -24,24 +24,40 @@
           <a class="navbar-brand" href="/">Coffee Source</a>
         </div>
 
-        <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="col-md-8 col-sm-12 col-xs-12">
           <a href="{{ last_ecoinstant_entry.url }}" target="_blank">{{ last_ecoinstant_entry.title }}</a>
-        </div>
-
-        <div class="col-md-4 col-sm-12 col-xs-12">
-        <form action="{% url 'accounts:username_search_form' %}" method="post" class=" form-inline my-2 my-lg-0">
-          {% csrf_token %}
-
-          <span class="CSHeaderAt">@</spa><input class="form-control mr-sm-2" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
-
-          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-        </form>
         </div>
       </div>
     </nav>
 
     <main role="main">
-      {% block content %}{% endblock content %}
+      <div class="jumbotron vertical-center">
+        <div class="container">
+            {% block jumbotron %}{% endblock jumbotron %}
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-12 col-xs-12">
+            <nav class="hidden-xs-down bg-faded sidebar">
+              <ul class="nav nav-pills flex-column SideNavBar">
+                <li class="nav-item">
+                  <a class="nav-link {% if easy_backlink %}active{% endif %}" href="/">Easy backlink</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link {% if selfie_contest %}active{% endif %}" href="{% url 'accounts:pepper_selfie_contest' %}">@papa-pepper selfie album</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div class="col-md-9 col-sm-12 col-xs-12">
+            {% block content %}{% endblock content %}
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer class="container">
