@@ -1,0 +1,60 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %}Selfie contest{% endblock title %}
+
+{% block jumbotron %}
+<div class="CSPepperSelfieContestHeader">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 text-center">
+            <h1>Selfie album</h1>
+            <p><a href="https://steemit.com/@papa-pepper" target="_blank">@papa-pepper</a> selfie contest</p>
+
+            {% if registered %}
+            <h3>@{{ username}} selfie album</h3>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="CSPepperSelfieContestContent">
+    <form action="{% url 'accounts:pepper_selfie_contest' %}" method="post" class="form-inline my-2 my-lg-0">
+    {% csrf_token %}
+    <span>@</span><input class="form-control" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Generate</button>
+    </form>
+
+    {% if username and not registered %}
+    <p>@{{ username }} is not a registered player.</p>
+    {% endif %}
+
+
+    {% if selfies_list %}
+    <br/>
+    <br/>
+
+    <ul>
+    {% for selfie_dict in selfies_list %}
+      <li>
+        <h3><a href="https://steemit.com/contest/@papa-pepper/{{ selfie_dict.permlink }}" target="_blank">{{ selfie_dict.title }}</a></h3>
+
+        <p><strong>{{ selfie_dict.challenge }}</strong></p>
+        <p class="badge badge-success">{{ selfie_dict.prize_pool }}</p>
+
+        <p>{{ selfie_dict.description|safe }}</p>
+
+        {% if selfie_dict.image %}
+        <img src="{{ selfie_dict.image }}" style="width: 300px; height: auto;">
+        {% else %}
+        <p class="badge badge-warning">Can´t find an image for this day.</p>
+        {% endif %}
+        <br/>
+        <br/>
+      </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+{% endblock content %}
