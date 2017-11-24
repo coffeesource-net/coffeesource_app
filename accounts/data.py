@@ -1,4 +1,4 @@
-SELFIE_CONTEST_PLAYERS = [
+﻿SELFIE_CONTEST_PLAYERS = [
     'aniafx1',
     'avatarawakening',
     'beccadeals',
@@ -355,14 +355,14 @@ PAPAPEPPER_CONTEST_ENTRIES = [
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 37',
         'permlink': 'the-daily-steemit-selfie-challenge-day-37-525-sbd-prize-pool-and-growing-shortened-round',
         'challenge': 'DAY 37 - PEOPLE, PETS, & A VEHICLE',
-        'description': 'To qualify this round, contestants needed to make it with 3 other people, 2 animal and 1 vehicle. The 3 other people and the 2 animals should be on top of the vehicle.',
+        'description': 'To qualify for this round, contestants needed to take a selfie with 3 other people, 2 animals and 1 vehicle. The 3 other people and the 2 animals should be on top of the vehicle.',
         'prize_pool': 'The current prize pool was 525 SBD',
     },
     {
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 38',
         'permlink': 'the-daily-steemit-selfie-challenge-day-38-535-sbd-prize-pool-and-growing-shortened-round',
         'challenge': 'DAY 38 - THE STATUE OF LIBERTY',
-        'description': 'To qualify this round, contestants needed to make themselves to spike of some sort on their head and hold something up higher than their head.',
+        'description': 'To qualify this round, contestants needed to add some sort of spikes to their head and hold something up higher than their head.',
         'prize_pool': 'The current prize pool was 535 SBD',
     },
     {
@@ -376,21 +376,28 @@ PAPAPEPPER_CONTEST_ENTRIES = [
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 40',
         'permlink': 'the-daily-steemit-selfie-challenge-day-40-1065-sbd-prize-pool-and-growing',
         'challenge': 'DAY 40 - BURIED ALIVE!',
-        'description': 'The goal of this round was to have people "got buried alive." It could be in the sand, in a pile a leaves, or even some dirty laundry.',
+        'description': 'The goal of this round was to have people "get buried alive." It could be in the sand, in a pile a leaves, or even in some dirty laundry.',
         'prize_pool': 'The current prize pool was 1065 SBD',
     },
     {
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 41',
         'permlink': 'the-daily-steemit-selfie-challenge-day-41-1075-sbd-prize-pool-and-growing',
         'challenge': "DAY 41 - THIS IS GETTIN' CRAZY",
-        'description': 'The goal of this round was to have people include three things.<br/>1 - Get one foot off of the ground.<br/>2 - Have some fire in the photo.<br/>3 - Blow some sort of powder out of their mouth.',
+        'description': 'The goal of this round was to have people do these three things.<br/>1 - Get one foot off of the ground.<br/>2 - Have some fire in the photo.<br/>3 - Blow some sort of powder out of their mouth.',
         'prize_pool': 'The current prize pool was 1075 SBD',
     },
     {
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 42',
         'permlink': 'the-daily-steemit-selfie-challenge-day-42-1095-sbd-prize-pool-and-growing',
         'challenge': 'DAY 42 - IN THE DRINK',
-        'description': 'To qualify this round, contestants needed to make themselves to stick your head under water.',
+        'description': 'To qualify this round, contestants needed to stick their heads under water.',
         'prize_pool': 'The current prize pool was 1095 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 43',
+        'permlink': 'the-daily-steemit-selfie-challenge-day-43-1111-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 42 - ANONYMOUS @OTAGE & THE SNEAKY NINJA',
+        'description': 'To qualify: <br> 1 - At least TWO PEOPLE needed to be in the photo. <br>2 - Competitors needed to put something RED over their nose and mouth to go "anonymous"<br>3 - Competitors needed to put on some sunglasses, or something that looks like sunglasses. <br>4 - ANOTHER person needed to be behind you, WITH a weapon of some sort. <br>5 - THE OTHER person needed some sunglasses, or something that looks like sunglasses. <br>6 - THE OTHER person needed to put something BLACK over their nose and mouth to finish the "SNEAKY NINJA" look',
+        'prize_pool': 'The current prize pool was 1111 SBD',
     },
 ]
