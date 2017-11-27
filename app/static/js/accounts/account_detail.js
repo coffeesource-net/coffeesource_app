@@ -19,10 +19,13 @@ function bindScroll(){
 $(function () {
     'use strict'; 
 
-    $(window).scroll(function() {
+    $(document.body).on('touchmove', onScroll);
+    $(window).on('scroll', onScroll);
+
+    function onScroll(){
        if($(window).scrollTop() + $(window).height() == $(document).height()) {
           $('.CSAccountLoadPostsSpinner').show();
           bindScroll();
        }
-    });
+    }
 });

@@ -3,6 +3,12 @@
     font-size: 30px;
 }
 
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  display: flex;
+  align-items: center;
+}
+
 .CSEntriesList {
     list-style: none;
 }
@@ -34,9 +40,8 @@
     height: 470px;
 }
 
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-
-  display: flex;
-  align-items: center;
+@media (max-width: 767px) {
+    .jumbotron > .container {
+        margin-top: 90px;
+    }
 }
