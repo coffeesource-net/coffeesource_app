@@ -3,7 +3,9 @@
     <div class="row CSEntryListItemMain">
         <div class="col-md-9 col-sm-6 col-xs-12">
             <h4>{{ blog_entry.title }}</h4>
-            <a href="{{ blog_entry.url }}" target="_blank">{{ blog_entry.url }}</a>
+            <div style="word-break: break-all;">
+                <a href="{{ blog_entry.url }}" target="_blank">{{ blog_entry.url }}</a>
+            </div>
         </div>
 
         <div class="col-md-3 col-sm-6 col-xs-12">
