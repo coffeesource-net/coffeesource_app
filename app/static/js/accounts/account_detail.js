@@ -19,7 +19,7 @@ function bindScroll(){
 $(function () {
     'use strict'; 
 
-    $(document.body).on('touchmove', onScroll);
+    $(window).on('touchmove', onScroll);
     $(window).on('scroll', onScroll);
 
     function onScroll(){
