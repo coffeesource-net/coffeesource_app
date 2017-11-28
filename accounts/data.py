@@ -404,7 +404,7 @@ PAPAPEPPER_CONTEST_ENTRIES = [
         'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 44',
         'permlink': 'the-daily-selfie-challenge-day-44-1125-sbd-prize-pool-and-growing-shortened-round',
         'challenge': 'DAY 44 - THE SOCIAL MEDIA RIOTS',
-        'description': 'To qualify: <br> 1 - At least TWO PEOPLE needed to be in the photo. <br>2 - Competitors needed to appear to be screaming or shouting.<br>3 - Competitors needed to be holding a STEEM logo sign.<br>4 - ANOTHER person needed to be behind you with another STEEM logo sign.<br>5 - To make things even harder, you needed to make it look like you'd set a vehicle on fire.',
+        'description': 'To qualify: <br> 1 - At least TWO PEOPLE needed to be in the photo. <br>2 - Competitors needed to appear to be screaming or shouting.<br>3 - Competitors needed to be holding a STEEM logo sign.<br>4 - ANOTHER person needed to be behind you with another STEEM logo sign.<br>5 - To make things even harder, you needed to make it look like you would set a vehicle on fire.',
         'prize_pool': 'The current prize pool was 1125 SBD',
     },
     {
