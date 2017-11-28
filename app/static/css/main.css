@@ -1,12 +1,21 @@
-.CSHeaderAt {
-    color: white;
-    font-size: 30px;
-}
-
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   display: flex;
   align-items: center;
+}
+
+/* Home Page */
+.CSHomeContainer {
+    height: 470px;
+}
+/* End - Home Page */
+
+/* Account Detail - Easy backlink */
+.CSProfileImage {
+    max-width: 130px;
+    max-height: auto;
+    display: block;
+    margin: auto;
 }
 
 .CSEntriesList {
@@ -25,20 +34,14 @@
     margin-bottom: 10px;
 }
 
-.CSProfileImage {
-    max-width: 130px;
-    max-height: auto;
-    display: block;
-    margin: auto;
-}
-
 .CSAccountDetail p {
     margin-bottom: 1px;
 }
 
-.CSHomeContainer {
-    height: 470px;
+.CSAccountLoadPostsSpinner {
+    margin-top: 20px;
 }
+/* End -  Account Detail - Easy backlin */
 
 @media (max-width: 767px) {
     .jumbotron > .container {
