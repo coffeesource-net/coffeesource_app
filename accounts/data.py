@@ -400,4 +400,32 @@ PAPAPEPPER_CONTEST_ENTRIES = [
         'description': 'To qualify: <br> 1 - At least TWO PEOPLE needed to be in the photo. <br>2 - Competitors needed to put something RED over their nose and mouth to go "anonymous"<br>3 - Competitors needed to put on some sunglasses, or something that looks like sunglasses. <br>4 - ANOTHER person needed to be behind you, WITH a weapon of some sort. <br>5 - THE OTHER person needed some sunglasses, or something that looks like sunglasses. <br>6 - THE OTHER person needed to put something BLACK over their nose and mouth to finish the "SNEAKY NINJA" look',
         'prize_pool': 'The current prize pool was 1111 SBD',
     },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 44',
+        'permlink': 'the-daily-selfie-challenge-day-44-1125-sbd-prize-pool-and-growing-shortened-round',
+        'challenge': 'DAY 44 - THE SOCIAL MEDIA RIOTS',
+        'description': 'To qualify: <br> 1 - At least TWO PEOPLE needed to be in the photo. <br>2 - Competitors needed to appear to be screaming or shouting.<br>3 - Competitors needed to be holding a STEEM logo sign.<br>4 - ANOTHER person needed to be behind you with another STEEM logo sign.<br>5 - To make things even harder, you needed to make it look like you'd set a vehicle on fire.',
+        'prize_pool': 'The current prize pool was 1125 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 45',
+        'permlink': 'the-daily-selfie-challenge-day-45-1140-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 45 - FLOWER CHILD',
+        'description': 'To qualify: <br> 1 - Competitors needed to change the color of their face.<br>2 - Competitors needed at least one leaf on their arm.<br>3 - Competitors needed petals around their face so that their head looked like a flower.',
+        'prize_pool': 'The current prize pool was 1140 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 46',
+        'permlink': 'the-daily-selfie-challenge-day-46-1150-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 46 - YOU CAN SEE HOW EXCITED HE IS BY THE LOOK IN HIS EYES',
+        'description': 'To qualify: <br> 1 - Competitors needed to make some cutout eyes to replace their "regular eyes."<br>2 - Competitors needed to make them round or oval in shape, and give them some pupils.<br>3 - Competitors needed to make them larger than normal, for added excitement.',
+        'prize_pool': 'The current prize pool was 1150 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 47',
+        'permlink': 'the-daily-selfie-challenge-day-47-1165-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 47 - POLICE SKETCH',
+        'description': 'To qualify: <br> 1 - Competitors needed to make a realistic sketch of themselves.<br>2 - Competitors needed to place the drawing over their faces and take a selfie.<br>3 - Even with a Quick Draw on the line, competitors needed to do a good job. A simply "happy face" drawing WOULD NOT QUALIFY.',
+        'prize_pool': 'The current prize pool was 1165 SBD',
+    },
 ]
