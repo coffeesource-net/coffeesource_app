@@ -10,8 +10,11 @@ function bindScroll(){
       success:function(response){
           if (response.action === 'load') {
               $('.CSEntriesList').append(response.content);
+          } else {
+            $('.CSLoadPostsButtom').hide();            
           }
           $('.CSAccountLoadPostsSpinner').hide();
+          $('.CSLoadPostsButtom').addClass('enabledLoad'); 
       },
   });
 }
@@ -19,13 +22,13 @@ function bindScroll(){
 $(function () {
     'use strict'; 
 
-    $(window).on('touchmove', onScroll);
-    $(window).on('scroll', onScroll);
-
-    function onScroll(){
-       if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    $('.CSLoadPostsButtom').on('click', function () {
+        if ($(this).hasClass('enabledLoad')) {
           $('.CSAccountLoadPostsSpinner').show();
+          $(this).removeClass('enabledLoad');
           bindScroll();
-       }
-    }
+        }
+
+        return false;
+    });
 });
