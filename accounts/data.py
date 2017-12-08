@@ -470,4 +470,32 @@ PAPAPEPPER_CONTEST_ENTRIES = [
         'description': 'To qualify: <br> 1 - Competitors needed six things<br>2 - Competitors needed to be balancing them in the selfie.',
         'prize_pool': 'The current prize pool was 1234 SBD',
     },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 54',
+        'permlink': 'the-daily-selfie-challenge-day-54-1245-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 54 - WHAT HAS 10 HEADS, 20 ARMS, AND USES WAY TOO MUCH TOILET PAPER?',
+        'description': 'To qualify: <br> 1 - Competitors needed AT LEAST 9 other people.<br>2 - Competitors needed to arrange them so it sort of looks like they had 10 heads total.',
+        'prize_pool': 'The current prize pool was 1245 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 55',
+        'permlink': 'the-daily-selfie-challenge-day-55-1255-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 55 - TRIBUTE TO THE FALLEN : @norwegiansteem',
+        'description': 'To qualify: <br> 1 - Competitors needed to make it look like they had their septum pierced.<br>2 - That meant "put a big ring in their nose."',
+        'prize_pool': 'The current prize pool was 1255 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 56',
+        'permlink': 'the-daily-selfie-challenge-day-56-1270-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 56 - FIERY & DANGEROUS',
+        'description': 'To qualify: <br> 1 - Competitors needed a weapon.<br>2 - The weapon needs to be on fire.<br>3 - Competitors needed to make sure it was a real weapon and really on fire.',
+        'prize_pool': 'The current prize pool was 1270 SBD',
+    },
+    {
+        'title': 'THE DAILY STEEMIT SELFIE CHALLENGE - DAY 57',
+        'permlink': 'the-daily-selfie-challenge-day-57-1285-sbd-prize-pool-and-growing',
+        'challenge': 'DAY 57- I NEED A SIGN',
+        'description': 'To qualify: <br> 1 - Competitors needed to find sort of official government sign in their area.<br>2 - It could have been a street sign, a stop sign, a speed limit sign or some other sign.<br>3 - They just had to make sure that it is an official sign placed by some sort of government agency, and not just a business sign or personal sign of someone.',
+        'prize_pool': 'The current prize pool was 1285 SBD',
+    },
 ]
