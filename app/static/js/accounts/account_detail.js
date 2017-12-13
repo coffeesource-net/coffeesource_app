@@ -1,5 +1,5 @@
 function bindScroll(){
-  var last_loaded_id = $( ".CSEntriesList >li:last-child" ).data('entry-id');
+  var last_loaded_id = $( ".CSEntriesList tr:last-child" ).data('entry-id');
   var load_account_posts_url = $('.CSEntriesList').data('ax-load-account-posts-url') + '&last_entry_id=' + last_loaded_id;
 
   $.ajax({
