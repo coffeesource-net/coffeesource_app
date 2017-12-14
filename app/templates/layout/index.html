@@ -47,6 +47,10 @@
                 </li>
 
                 <li class="nav-item">
+                  <a class="nav-link {% if images_backlink %}active{% endif %}" href="{% url 'accounts:images_backlink' %}">Easy backlinking images</a>
+                </li>
+
+                <li class="nav-item">
                   <a class="nav-link {% if selfie_contest %}active{% endif %}" href="{% url 'accounts:pepper_selfie_contest' %}">@papa-pepper selfie album</a>
                 </li>
               </ul>

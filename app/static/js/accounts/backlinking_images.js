@@ -1,6 +1,7 @@
-function bindScroll(){
-  var last_loaded_id = $(".CSEntriesList tr:last").data('entry-id');
-  var load_account_posts_url = $('.CSEntriesList').data('ax-load-account-posts-url') + '&last_entry_id=' + last_loaded_id;
+function LoadPostImages(){
+  var last_loaded_id = $(".ImagesLinkList tr:last").data('entry-id');
+
+  var load_account_posts_url = $('.ImagesLinkList').data('ax-load-posts-images-url') + '&last_entry_id=' + last_loaded_id;
 
   $.ajax({
       url : load_account_posts_url,
@@ -9,12 +10,12 @@ function bindScroll(){
       contentType: false,
       success:function(response){
           if (response.action === 'load') {
-              $('.CSEntriesList').append(response.content);
+              $('.ImagesLinkList').append(response.content);
           } else {
-            $('.CSLoadPostsButtom').hide();
+            $('.LoadPostsImages').hide();            
           }
           $('.CSAccountLoadPostsSpinner').hide();
-          $('.CSLoadPostsButtom').addClass('enabledLoad'); 
+          $('.LoadPostsImages').addClass('enabledLoad'); 
       },
   });
 }
@@ -22,11 +23,11 @@ function bindScroll(){
 $(function () {
     'use strict'; 
 
-    $('.CSLoadPostsButtom').on('click', function () {
+    $('.LoadPostsImages').on('click', function () {
         if ($(this).hasClass('enabledLoad')) {
           $('.CSAccountLoadPostsSpinner').show();
           $(this).removeClass('enabledLoad');
-          bindScroll();
+          LoadPostImages();
         }
 
         return false;

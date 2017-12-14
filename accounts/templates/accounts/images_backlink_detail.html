@@ -1,0 +1,57 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %}@{{ account_dict.username }} Easy backlinking images{% endblock title %}
+
+{% block jumbotron %}
+<div class="CSAccountDetail">
+    <div class="row">
+        <div class="col-md-3 col-sm-12 col-xs-12">
+            {% if account_dict.profile_image %}
+            <img class="CSProfileImage rounded-circle" src="{{ account_dict.profile_image }}">
+            {% else %}
+            <i class="CSProfileImage fa fa-user-circle-o fa-5x" aria-hidden="true"></i>
+            {% endif %}
+        </div>
+
+        <div class="col-md-6 col-sm-12 col-xs-12 text-center">
+            <h1 class="display-4">@{{ account_dict.username }}</h1>
+            {% if account_dict.name %}
+            <p>{{ account_dict.name }}</p>
+            {% endif %}
+
+            <p>Joined at {{ account_dict.created }}</p>
+        </div>
+
+
+        <div class="col-md-3 col-sm-12 col-xs-12 text-center">
+            <p><strong>Total posts:</strong> {{ account_dict.post_count }}</p>
+            <p><strong>Voting power:</strong> {{ account_dict.voting_power }}</p>
+            <p><strong>Curation rewards:</strong> {{ account_dict.curation_rewards }}</p>
+            <p><strong>Posting rewards:</strong> {{ account_dict.posting_rewards }}</p>
+            <p><strong>Reputation:</strong> {{ account_dict.reputation }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div>
+    <table class="ImagesLinkList table table-striped" data-ax-load-posts-images-url="{% url 'accounts:ax_load_posts_images' %}?username={{ account_dict.username }}">
+
+    {% include 'accounts/entries/_images_backlink_list.html' %}
+    </table>
+
+    <div class="text-center">
+        <a href="#" class="LoadPostsImages btn btn-info enabledLoad">Load more posts</a>
+    </div>
+
+    <div class="CSAccountLoadPostsSpinner text-center" style="display:none;">
+        <i class="fa fa-spinner fa-pulse fa-fw fa-2x" aria-hidden="true"></i>
+    </div>
+</div>
+{% endblock content %}
+
+{% block js %}
+<script src="{% static 'js/accounts/backlinking_images.js' %}"></script>
+{% endblock %}

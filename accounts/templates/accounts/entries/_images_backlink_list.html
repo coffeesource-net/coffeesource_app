@@ -1,0 +1,18 @@
+{% for blog_entry in entries_list %}
+<tr data-entry-id="{{ blog_entry.entry_id }}">
+    <td>
+        <h4>{{ blog_entry.title }}</h4>
+
+        {% for image in blog_entry.images %}
+        <div class="row BackLinkImageItem">
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <img src="{{ image }}" style="max-width: 100%">
+            </div>
+            <div class="col-md-9 col-sm-12 col-xs-12" style="word-break: break-all;">
+                <p>![image_{{ forloop.counter }}]({{ image }})</p>
+            </div>
+        </div>
+        {% endfor %}
+    </td>
+</tr>
+{% endfor %}
