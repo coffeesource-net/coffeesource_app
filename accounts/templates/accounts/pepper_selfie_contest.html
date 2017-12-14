@@ -20,16 +20,15 @@
 
 {% block content %}
 <div class="CSPepperSelfieContestContent">
-    <form action="{% url 'accounts:pepper_selfie_contest' %}" method="post" class="form-inline my-2 my-lg-0">
+    <form action="{% url 'accounts:pepper_selfie_contest' %}" method="post" class="hidden-form">
     {% csrf_token %}
-    <span>@</span><input class="form-control" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+    <span>@</span><input class="form-control 4" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Generate</button>
     </form>
 
     {% if username and not registered %}
     <p>@{{ username }} is not a registered player.</p>
     {% endif %}
-
 
     {% if selfies_list %}
     <br/>
@@ -57,4 +56,28 @@
     </ul>
     {% endif %}
 </div>
+<div><br>
+<h3>See the different Selfie Albums from Season 1!</h3>
+
+<ul>
+    {% for contestant in selfie_contestants_list %}
+    <li>
+        <a href="#" class="album-generator">{{ contestant }}</a>
+    </li>
+    {% endfor %}
+</ul>
+  
+</div>
 {% endblock content %}
+
+{% block js %}
+<script>
+$(function () {
+    $('.album-generator').on('click', function() {
+        var username = $(this).text();
+        $('.4').val(username);
+        $('.CSPepperSelfieContestContent form').submit();
+    });
+});
+</script>
+{% endblock %}

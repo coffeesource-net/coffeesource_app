@@ -18,12 +18,20 @@
     margin: auto;
 }
 
+.hidden-form {
+	display:none;
+}
+
 .CSEntriesList {
     list-style: none;
 }
 .CSEntryListItem {
     padding: 20px;
     margin-bottom: 10px;
+}
+
+.CSEntryListItemMain td {
+	font-size: 10px;
 }
 
 .CSEntryListItem p {
