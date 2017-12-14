@@ -1,11 +1,9 @@
 {% for blog_entry in entries_list %}
-<tr class="CSEntryListItem border border-secondary rounded" data-entry-id="{{ blog_entry.entry_id }}">
-    <div class="row CSEntryListItemMain">
-            <div style="word-break: break-all;">
-
-                <td>[{{ blog_entry.title }}]<a href="{{ blog_entry.url }}" target="_blank">({{ blog_entry.url }})</a></td>
-
-            </div>
+<tr data-entry-id="{{ blog_entry.entry_id }}">
+    <div class="row">
+        <div style="word-break: break-all;">
+            <td>[{{ blog_entry.title }}]<a href="{{ blog_entry.url }}" target="_blank">({{ blog_entry.url }})</a></td>
+        </div>
     </div>
 </tr>
 {% endfor %}

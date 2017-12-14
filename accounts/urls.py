@@ -2,6 +2,9 @@ from django.conf.urls import url
 
 from .views import UsernameSearchFormView
 from .views import AjaxLoadAccountPostsView
+from .views import ImagesBacklinkView
+from .views import ImagesBacklinkViewDetail
+from .views import AjaxLoadPostsImagesView
 from .views import PepperView
 
 urlpatterns = [
@@ -15,6 +18,24 @@ urlpatterns = [
         r'^ax_load_account_posts/',
         AjaxLoadAccountPostsView.as_view(),
         name='ax_load_account_posts',
+    ),
+
+    url(
+        r'^images_backlink/$',
+        ImagesBacklinkView.as_view(),
+        name='images_backlink',
+    ),
+
+    url(
+        r'^images_backlink/(?P<username>[-\w.@]+)/$',
+        ImagesBacklinkViewDetail.as_view(),
+        name='images_backlink_detail',
+    ),
+
+    url(
+        r'^ax_load_posts_images/',
+        AjaxLoadPostsImagesView.as_view(),
+        name='ax_load_posts_images',
     ),
 
     url(

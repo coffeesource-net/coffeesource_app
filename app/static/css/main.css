@@ -22,26 +22,6 @@
 	display:none;
 }
 
-.CSEntriesList {
-    list-style: none;
-}
-.CSEntryListItem {
-    padding: 20px;
-    margin-bottom: 10px;
-}
-
-.CSEntryListItemMain td {
-	font-size: 10px;
-}
-
-.CSEntryListItem p {
-    margin-bottom: 1px;
-}
-
-.CSEntryListItemMain {
-    margin-bottom: 10px;
-}
-
 .CSAccountDetail p {
     margin-bottom: 1px;
 }
@@ -50,6 +30,15 @@
     margin-top: 20px;
 }
 /* End -  Account Detail - Easy backlin */
+
+/* Easy images backlink */
+.BackLinkImageItem {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px dotted #6091ba;
+    padding: 5px;
+}
+/* end - Easy images backlink */
 
 @media (max-width: 767px) {
     .jumbotron > .container {

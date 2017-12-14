@@ -1,0 +1,25 @@
+{% extends "layout/index.html" %}
+{% load static %}
+
+{% block title %}Easy backlinking images{% endblock title %}
+
+{% block jumbotron %}
+<div class="row text-center">
+    <div class="col-md-4 offset-md-4">
+        <h1>Coffee Source</h1>
+        <p><i>Easy Backlinks for your Images</i></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="CSHomeContainer">
+  <form action="{% url 'accounts:username_search_form' %}" method="post" class="form-inline my-2 my-lg-0">
+    {% csrf_token %}
+    <span>@</span><input class="form-control" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+    <input type="text" name="images_backlink" value="images_backlink" style="display:none;">
+
+    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+{% endblock content %}
