@@ -23,7 +23,6 @@
             <p>Joined at {{ account_dict.created }}</p>
         </div>
 
-
         <div class="col-md-3 col-sm-12 col-xs-12 text-center">
             <p><strong>Total posts:</strong> {{ account_dict.post_count }}</p>
             <p><strong>Voting power:</strong> {{ account_dict.voting_power }}</p>
@@ -37,6 +36,17 @@
 
 {% block content %}
 <div class="CSAccountDetailEntries">
+    <div class="backlink_filter_form">
+        <form method="post" class="clearfix">
+            <div class="form-group">
+                <input type="text" name="tag filter" id="id_tag_filter_field" placeholder="Filter by tag">
+            </div>
+            <button type="submit" class="btn btn-info">Filter</button>
+        </form>
+
+        <ul class="applied_tag_filters"></ul>
+    </div>
+
     <table class="CSEntriesList table table-bordered" data-ax-load-account-posts-url="{% url 'accounts:ax_load_account_posts' %}?username={{ account_dict.username }}">
 
     {% include 'accounts/entries/_entry_list.html' %}
