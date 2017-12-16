@@ -16,23 +16,34 @@ function bindScroll(){
           $('.CSAccountLoadPostsSpinner').hide();
           $('.CSLoadPostsButtom').addClass('enabledLoad');
 
+          // Check applied tags to filter
           var tags_list = []
-
           $('.applied_tag_filters li').each(function(i, obj) {
             tags_list.push($(obj).data('tag'));
           });
 
+          // Check applied title search
+          var search_text = $('#id_title_search_field').val().toLowerCase();
+
           $('.CSEntriesList tr').each(function(i, obj) {
-            var hide = false;
+            var hide_by_tag = false;
 
             for (var tag_idx in tags_list) {
               if ($(obj).hasClass(tags_list[tag_idx]) == false) {
-                hide = true
+                hide_by_tag = true
               }
             }
 
-            if (hide == true) {
+            if (hide_by_tag == true) {
               $(obj).hide();
+            }
+
+            var title = $(obj).data('entry-title').toLowerCase();
+
+            if (search_text) {
+              if (!title.includes(search_text)) {
+                $(obj).hide();
+              }
             }
           });          
           
@@ -53,6 +64,22 @@ $(function () {
         return false;
     });
 
+    // Posts search by title.
+    $('#id_title_search_field').on('input', function() {
+      var search_text = $(this).val().toLowerCase();
+
+      $('.CSEntriesList tr').each(function(i, obj) {
+        var title = $(obj).data('entry-title').toLowerCase();
+
+        if (!title.includes(search_text)) {
+          $(obj).hide();
+        } else {
+          $(obj).show();
+        }
+      });
+    });
+
+    // Filter list by tag - Form submit.
     $('.backlink_filter_form form').on('submit', function() {
       var tag = $('#id_tag_filter_field').val();
       var data_tag = 'tag_' + tag;
@@ -65,10 +92,27 @@ $(function () {
       return false;
     });
 
+    // Remove tag filter.
     $('.applied_tag_filters').on('click', '.tag_remove', function () {
       var tag_to_remove = $(this).closest('li').data('tag');
 
-      $('.CSEntriesList tr').not("." + tag_to_remove).show();
+      var search_text = $('#id_title_search_field').val().toLowerCase();
+
+      $('.CSEntriesList tr').each(function(i, obj) {
+
+        // Check if there is any title filter appliced.
+        var title = $(obj).data('entry-title').toLowerCase();
+        if (!$(obj).hasClass(tag_to_remove)) {
+          $(obj).show();
+
+          if (search_text) {
+            if (!title.includes(search_text)) {
+              $(obj).hide();              
+            }
+          }
+        }
+      });
+
       $(this).parent().remove();
     });
 });
