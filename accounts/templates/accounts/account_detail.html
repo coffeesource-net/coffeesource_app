@@ -37,14 +37,24 @@
 {% block content %}
 <div class="CSAccountDetailEntries">
     <div class="backlink_filter_form">
-        <form method="post" class="clearfix">
-            <div class="form-group">
-                <input type="text" name="tag filter" id="id_tag_filter_field" placeholder="Filter by tag">
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="form-group">
+                    <input type="text" name="tag_title" id="id_title_search_field" placeholder="Search by title" class="form-control">
+                </div>
             </div>
-            <button type="submit" class="btn btn-info">Filter</button>
-        </form>
 
-        <ul class="applied_tag_filters"></ul>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <form method="post" class="clearfix">
+                    <div class="form-group">
+                        <input type="text" name="tag_filter" id="id_tag_filter_field" placeholder="Filter by tag" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-info float-right">Filter</button>
+                </form>
+
+                <ul class="applied_tag_filters"></ul>
+            </div>
+        </div>
     </div>
 
     <table class="CSEntriesList table table-bordered" data-ax-load-account-posts-url="{% url 'accounts:ax_load_account_posts' %}?username={{ account_dict.username }}">
