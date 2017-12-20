@@ -122,6 +122,15 @@ class ImagesBacklinkView(TemplateView):
 
         return context
 
+class TrainingGrounds(TemplateView):
+    template_name = 'accounts/training_grounds.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['training_grounds'] = True
+
+        return context
+
 
 class ImagesBacklinkViewDetail(TemplateView):
     template_name = 'accounts/images_backlink_detail.html'

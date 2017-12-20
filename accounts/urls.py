@@ -6,6 +6,7 @@ from .views import ImagesBacklinkView
 from .views import ImagesBacklinkViewDetail
 from .views import AjaxLoadPostsImagesView
 from .views import PepperView
+from .views import TrainingGrounds
 
 urlpatterns = [
     url(
@@ -42,5 +43,11 @@ urlpatterns = [
         r'^papa-pepper-selfie-contest-1/',
         PepperView.as_view(),
         name='pepper_selfie_contest',
+    ),
+
+    url(
+        r'^training_grounds/',
+        TrainingGrounds.as_view(),
+        name='training_grounds',
     ),
 ]
