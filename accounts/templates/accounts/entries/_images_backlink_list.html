@@ -1,5 +1,5 @@
 {% for blog_entry in entries_list %}
-<tr data-entry-id="{{ blog_entry.entry_id }}">
+<tr data-entry-id="{{ blog_entry.entry_id }}" class="{% for tag in blog_entry.tags %}tag_{{ tag }} {% endfor %}" data-entry-title="{{ blog_entry.title }}">
     <td>
         <h4>{{ blog_entry.title }}</h4>
 
