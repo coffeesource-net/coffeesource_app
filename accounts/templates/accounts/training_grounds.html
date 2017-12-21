@@ -7,7 +7,14 @@
 {% endblock %}
 
 
-
-<div>
-<p>This is an area to practice stuff</p>
+{% block content %}
+<div class="container col-md-6 pull-left"> 
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+<div class="coinmarketcap-currency-widget" data-currency="steem-dollars" data-base="USD"  data-secondary="STEEM"></div>
 </div>
+
+<div class="container col-md-6 pull-right">
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+<div class="coinmarketcap-currency-widget" data-currency="steem" data-base="USD"  data-secondary="BTC"></div>
+</div>
+{% endblock %}
