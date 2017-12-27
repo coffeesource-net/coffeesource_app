@@ -122,6 +122,7 @@ class ImagesBacklinkView(TemplateView):
 
         return context
 
+
 class TrainingGrounds(TemplateView):
     template_name = 'accounts/training_grounds.html'
 

@@ -20,15 +20,11 @@
 
 {% block content %}
 <div class="CSPepperSelfieContestContent">
-    <form action="{% url 'accounts:pepper_selfie_contest' %}" method="post" class="hidden-form">
+    <form action="{% url 'accounts:pepper_selfie_contest' %}" method="post" class="hidden">
     {% csrf_token %}
-    <span>@</span><input class="form-control 4" type="text" required placeholder="Search Steem Username" aria-label="Search" name="cs_username_search">
+    <input class="form-control 4" type="text" aria-label="Search" name="cs_username_search">
     <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Generate</button>
     </form>
-
-    {% if username and not registered %}
-    <p>@{{ username }} is not a registered player.</p>
-    {% endif %}
 
     {% if selfies_list %}
     <br/>
