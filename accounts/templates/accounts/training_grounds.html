@@ -8,6 +8,7 @@
 
 
 {% block content %}
+<div class='row'>
 <div class="container col-md-6 pull-left"> 
 <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 <div class="coinmarketcap-currency-widget" data-currency="steem-dollars" data-base="USD"  data-secondary="STEEM"></div>
@@ -16,5 +17,44 @@
 <div class="container col-md-6 pull-right">
 <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 <div class="coinmarketcap-currency-widget" data-currency="steem" data-base="USD"  data-secondary="BTC"></div>
+</div></div>
+
+<br><br><br><br>
+
+<div class='row'>
+<form class="container col-md-6 pull-left" id=reverseString>
+    <input class="container col-md-6 pull-left" type="text" name="str" placeholder="Any String">
+		
+
+		<button type="submit">Reverse it!</button>
+</form>
+
+	<p class="container col-md-6 pull-right" id=nonsense></p>
+
 </div>
+
+
+{% endblock %}
+{% block js %}
+<script>
+
+
+function reverseString(str) {
+ 			var array = str.split('');
+  			var reversedArray = array.reverse();
+  			var nonsense = reversedArray.join('');
+    		return nonsense; }
+
+$(function () {
+
+	$('#reverseString').on('submit', function () {
+		var str = $('#reverseString input').val();
+		var str_reversed = reverseString(str);
+		$('#nonsense').text(str_reversed);
+
+		return false;
+	});
+});
+
+</script>
 {% endblock %}
