@@ -26,7 +26,12 @@ def get_user_posts(username, from_id):
         entry_dict = {
             'id': comment.get('id'),
             'title': comment.get('title'),
-            'url': 'https://steemit.com/{0}/@{1}/{2}'.format(
+            'clickable': 'https://www.steemit.com/{0}/@{1}/{2}'.format(
+                category,
+                author,
+                comment.get('permlink'),
+            ),
+            'url': '/{0}/@{1}/{2}'.format(
                 category,
                 author,
                 comment.get('permlink'),
