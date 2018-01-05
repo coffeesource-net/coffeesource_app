@@ -2,7 +2,7 @@
 <tr data-entry-id="{{ blog_entry.entry_id }}" class="{% for tag in blog_entry.tags %}tag_{{ tag }} {% endfor %}" data-entry-title="{{ blog_entry.title }}">
     <div class="row">
         <div style="word-break: break-all;">
-            <td>[{{ blog_entry.title }}]<a href="{{ blog_entry.url }}" target="_blank">({{ blog_entry.url }})</a></td>
+            <td>[{{ blog_entry.title }}]<a href="{{ blog_entry.clickable }}" target="_blank">({{ blog_entry.url }})</a></td>
         </div>
     </div>
 </tr>
