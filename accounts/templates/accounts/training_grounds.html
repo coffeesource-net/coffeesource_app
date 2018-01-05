@@ -8,11 +8,14 @@
 
 
 {% block content %}
+
 <div class='row'>
+
 <div class="container col-md-6 pull-left"> 
 <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
 <div class="coinmarketcap-currency-widget" data-currency="steem-dollars" data-base="USD"  data-secondary="STEEM"></div>
 </div>
+
 
 <div class="container col-md-6 pull-right">
 <script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
@@ -35,6 +38,7 @@
 
 
 {% endblock %}
+
 {% block js %}
 <script>
 
@@ -58,3 +62,11 @@ $(function () {
 
 </script>
 {% endblock %}
+
+
+<div class="container col-md-6 pull-right">
+<script type="text/javascript" src="https://files.coinmarketcap.com/static/widget/currency.js"></script>
+<div class="coinmarketcap-currency-widget" data-currency="steem" data-base="USD"  data-secondary="BTC"></div>
+</div>
+{% endblock %}
+
