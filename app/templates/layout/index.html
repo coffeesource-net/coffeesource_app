@@ -17,19 +17,6 @@
     {% block css %}{% endblock %}
   </head>
   <body>
-    {% get_last_ecoinstant_entry as last_ecoinstant_entry %}
-    <nav class="navbar-dark fixed-top bg-dark">
-      <div class="row">
-        <div class="col-md-4 col-sm-12 col-xs-12 text-center">
-          <a class="navbar-brand" href="/">Coffee Source</a>
-        </div>
-
-        <div class="col-md-8 col-sm-12 col-xs-12 text-center">
-          <a href="{{ last_ecoinstant_entry.url }}" target="_blank">{{ last_ecoinstant_entry.title }}</a>
-        </div>
-      </div>
-    </nav>
-
     <main role="main">
       <div class="jumbotron vertical-center">
         <div class="container">
