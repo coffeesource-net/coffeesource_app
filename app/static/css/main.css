@@ -18,8 +18,8 @@
     margin: auto;
 }
 
-.hidden-form {
-	display:none;
+.hidden {
+    display:none;
 }
 
 .CSAccountDetail p {
