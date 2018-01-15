@@ -16,7 +16,6 @@ def get_user_posts(username, from_id):
 
     for entry in blog_entries:
         comment = entry['comment']
-        metadata = json.loads(comment.get('json_metadata'))
 
         # Could be util to load posts on utopian directly.
         # parent_permlink = comment.get('permlink')
@@ -24,6 +23,7 @@ def get_user_posts(username, from_id):
 
         if username == author:
             category = comment.get('category')
+            metadata = json.loads(comment.get('json_metadata'))
             entry_dict = {
                 'id': comment.get('id'),
                 'title': comment.get('title'),
