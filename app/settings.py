@@ -62,3 +62,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STEEM_NODES = [
+    'https://api.steemit.com',
+    'https://steemd.privex.io',
+    'https://gtg.steem.house:8090',
+    'https://steemd.minnowsupportproject.org',
+    'https://steemd.privex.io',
+    'https://steemd.steemit.com',
+    'https://rpc.steemliberator.com',
+    ]
+

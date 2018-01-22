@@ -2,12 +2,14 @@ from steem import Steem
 
 from django import template
 
+from app import settings
+
 register = template.Library()
 
 
 @register.assignment_tag
 def get_last_ecoinstant_entry():
-    s = Steem()
+    s = Steem(nodes=settings.STEEM_NODES)
     blog_entries = s.get_blog(
         account='ecoinstant',
         entry_id=0,

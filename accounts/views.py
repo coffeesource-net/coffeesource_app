@@ -12,9 +12,9 @@ from django.template.loader import render_to_string
 from .data import SELFIE_CONTEST_PLAYERS
 from .data import PAPAPEPPER_CONTEST_ENTRIES
 from .utils import get_user_posts
+from app import settings
 
 
-s = Steem()
 
 
 class UsernameSearchFormView(View):
@@ -37,6 +37,7 @@ class AccountDetailView(TemplateView):
         if username[0] == '@':
             username = username[1:]
 
+        s = Steem(nodes=settings.STEEM_NODES)
         account_info = s.get_account(username)
         profile_image = None
         name = None
@@ -142,6 +143,7 @@ class ImagesBacklinkViewDetail(TemplateView):
         if username[0] == '@':
             username = username[1:]
 
+        s = Steem(nodes=settings.STEEM_NODES)
         account_info = s.get_account(username)
         profile_image = None
         name = None
@@ -240,7 +242,7 @@ class PepperView(TemplateView):
         if username in SELFIE_CONTEST_PLAYERS:
             registered = True
 
-            s = Steem()
+            s = Steem(nodes=settings.STEEM_NODES)
 
             for entry_dict in PAPAPEPPER_CONTEST_ENTRIES:
                 selfie_dict = {

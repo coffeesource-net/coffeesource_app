@@ -1,15 +1,16 @@
 import json
 
 from steem import Steem
+from app import settings
 
 
-def get_user_posts(username, from_id):
-    s = Steem()
+def get_user_posts(username, from_id, limit=60):
+    s = Steem(nodes=settings.STEEM_NODES)
 
     blog_entries = s.get_blog(
         account=username,
         entry_id=from_id,
-        limit=60,
+        limit=limit,
     )
 
     entries_list = []
@@ -22,6 +23,7 @@ def get_user_posts(username, from_id):
         author = comment.get('author')
 
         if username == author:
+            metadata = json.loads(comment.get('json_metadata'))
             category = comment.get('category')
             metadata = json.loads(comment.get('json_metadata'))
             entry_dict = {
